@@ -1,0 +1,10 @@
+# 构建产物
+build-manual/
+*.apk
+
+# Gradle / IDE
+.gradle/
+build/
+.idea/
+local.properties
+*.iml

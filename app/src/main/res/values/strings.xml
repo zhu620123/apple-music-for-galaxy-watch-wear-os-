@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AM启动器</string>
+    <string name="launch_apple_music">▶ 启动 Apple Music</string>
+    <string name="all_apps">全部应用列表</string>
+    <string name="help">使用说明</string>
+</resources>
