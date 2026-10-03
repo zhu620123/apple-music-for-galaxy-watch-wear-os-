@@ -2,51 +2,152 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:overScrollMode="never">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:padding="16dp">
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="18dp"
+        android:paddingBottom="18dp">
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textSize="18sp"
+            android:textSize="26sp"
             android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
+            android:textColor="#FFFFFF"
+            android:letterSpacing="0.02"
+            android:shadowColor="#66000000"
+            android:shadowRadius="6"
+            android:shadowDy="2" />
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subtitle"
+            android:textSize="11sp"
+            android:textColor="#9AA3B8"
+            android:letterSpacing="0.25"
+            android:layout_marginTop="2dp" />
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="14dp" />
 
         <TextView
             android:id="@+id/tv_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:gravity="center"
-            android:layout_marginBottom="12dp" />
+            android:textSize="12sp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:gravity="center" />
 
-        <Button
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="20dp" />
+
+        <ImageButton
             android:id="@+id/btn_launch"
+            android:layout_width="104dp"
+            android:layout_height="104dp"
+            android:background="@drawable/ripple_hero"
+            android:src="@drawable/ic_play"
+            android:scaleType="centerInside"
+            android:padding="30dp"
+            android:contentDescription="@string/launch_apple_music" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="220dp"
-            android:text="@string/launch_apple_music" />
+            android:text="@string/launch_apple_music"
+            android:textSize="14sp"
+            android:textColor="#E8EBF4"
+            android:letterSpacing="0.03"
+            android:layout_marginTop="10dp" />
 
-        <Button
-            android:id="@+id/btn_all_apps"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:minWidth="220dp"
-            android:text="@string/all_apps" />
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="22dp" />
 
-        <Button
+        <LinearLayout
+            android:id="@+id/btn_all"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/selector_pill"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_list"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/all_apps"
+                android:textSize="15sp"
+                android:textColor="#E8EBF4"
+                android:layout_marginLeft="12dp" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="10dp" />
+
+        <LinearLayout
             android:id="@+id/btn_help"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/selector_pill"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_help"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/help"
+                android:textSize="15sp"
+                android:textColor="#E8EBF4"
+                android:layout_marginLeft="12dp" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="18dp" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="220dp"
-            android:text="@string/help" />
+            android:text="@string/footer_hint"
+            android:textSize="11sp"
+            android:textColor="#69707F"
+            android:gravity="center" />
     </LinearLayout>
 </ScrollView>

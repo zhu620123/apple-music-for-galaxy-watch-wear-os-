@@ -25,7 +25,7 @@ if [ "$USE_AAPT2" = "1" ]; then
     --manifest "$APP/AndroidManifest.xml" -R "$OUT/res.zip" \
     --java "$OUT/gen" --auto-add-overlay \
     --min-sdk-version 26 --target-sdk-version 34 \
-    --version-code 1 --version-name 1.0
+    --version-code 2 --version-name 1.1
 else
   echo "[1/5] aapt(系统版) 编译资源..."
   command -v aapt >/dev/null 2>&1 || { echo "缺少 aapt（apt install aapt）"; exit 1; }
@@ -36,7 +36,7 @@ else
   aapt package -f -m -S "$APP/res" -M "$OUT/AndroidManifest.xml" \
     -I "$PLATFORM" -J "$OUT/gen" -F "$OUT/unsigned.apk" \
     --min-sdk-version 26 --target-sdk-version 34 \
-    --version-code 1 --version-name 1.0
+    --version-code 2 --version-name 1.1
 fi
 
 echo "[2/5] javac 编译 Java..."

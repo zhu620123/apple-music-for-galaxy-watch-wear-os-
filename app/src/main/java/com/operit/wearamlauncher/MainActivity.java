@@ -8,7 +8,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,15 +23,21 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnLaunch = findViewById(R.id.btn_launch);
-        Button btnAll = findViewById(R.id.btn_all_apps);
-        Button btnHelp = findViewById(R.id.btn_help);
+        ImageButton btnLaunch = findViewById(R.id.btn_launch);
+        View btnAll = findViewById(R.id.btn_all);
+        View btnHelp = findViewById(R.id.btn_help);
         TextView tvStatus = findViewById(R.id.tv_status);
 
         boolean installed = isInstalled(APPLE_MUSIC_PACKAGE);
-        tvStatus.setText(installed
-                ? "Apple Music 已安装 ✓"
-                : "未检测到 Apple Music ✗\n请先侧载官方 Apple Music APK");
+        if (installed) {
+            tvStatus.setText("✓ Apple Music 已安装");
+            tvStatus.setBackgroundResource(R.drawable.bg_status_ok);
+            tvStatus.setTextColor(0xFF7CE39B);
+        } else {
+            tvStatus.setText("✗ 未检测到 Apple Music");
+            tvStatus.setBackgroundResource(R.drawable.bg_status_err);
+            tvStatus.setTextColor(0xFFFF8B9C);
+        }
 
         btnLaunch.setOnClickListener(v -> launchPackage(APPLE_MUSIC_PACKAGE));
         btnAll.setOnClickListener(v -> startActivity(new Intent(this, AllAppsActivity.class)));

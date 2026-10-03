@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AM启动器</string>
-    <string name="launch_apple_music">▶ 启动 Apple Music</string>
+    <string name="subtitle">APPLE MUSIC · WEAR OS</string>
+    <string name="launch_apple_music">启动 Apple Music</string>
     <string name="all_apps">全部应用列表</string>
     <string name="help">使用说明</string>
+    <string name="apps_title">全部应用</string>
+    <string name="footer_hint">官方 Apple Music 需自行侧载（APK 版）</string>
 </resources>

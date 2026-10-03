@@ -9,6 +9,7 @@
 - 「全部应用列表」：列出所有已安装可启动应用，作为侧载应用的备用入口
 - 显示 Apple Music 是否已安装
 - 内置使用说明
+- 暗色渐变 UI + 圆形主按钮 + 状态徽章，适配圆形表盘
 
 纯 Android 原生 API 实现，零第三方依赖，APK 体积约几十 KB。
 不实现播放、DRM、登录，也不修改 Apple Music 本体。
@@ -67,6 +68,11 @@ ANDROID_SDK=/path/to/sdk ./build_manual.sh
   A: Apple Music 没装上或装的是 bundle，改装 APK 版。
 - Q: 登录不了 Apple ID？
   A: 在 Apple Music 内登录；如遇风控，先在手机上登录并信任设备。
+
+## 更新日志
+
+- v1.1：全新暗色渐变 UI（圆形主按钮、状态徽章、图标化菜单、应用列表标题栏）
+- v1.0：首个版本
 
 ## 免责声明
 

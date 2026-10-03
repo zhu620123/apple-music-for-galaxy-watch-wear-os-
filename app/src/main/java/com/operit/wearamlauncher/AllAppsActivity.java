@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +42,21 @@ public class AllAppsActivity extends Activity {
             return la.compareToIgnoreCase(lb);
         });
 
+        LinearLayout root = new LinearLayout(this);
+        root.setOrientation(LinearLayout.VERTICAL);
+
+        TextView header = new TextView(this);
+        header.setText(R.string.apps_title);
+        header.setTextSize(20);
+        header.setTextColor(0xFFFFFFFF);
+        header.setTypeface(null, Typeface.BOLD);
+        header.setPadding(28, 26, 28, 10);
+        root.addView(header);
+
         ListView lv = new ListView(this);
+        lv.setDivider(null);
+        lv.setDividerHeight(0);
+        lv.setCacheColorHint(0x00000000);
         lv.setAdapter(new BaseAdapter() {
             @Override
             public int getCount() {
@@ -63,8 +79,9 @@ public class AllAppsActivity extends Activity {
                         ? (TextView) v
                         : new TextView(AllAppsActivity.this);
                 tv.setText(apps.get(i).loadLabel(getPackageManager()));
-                tv.setTextSize(16);
-                tv.setPadding(24, 26, 24, 26);
+                tv.setTextSize(15);
+                tv.setTextColor(0xFFE8EBF4);
+                tv.setPadding(28, 22, 28, 22);
                 return tv;
             }
         });
@@ -80,6 +97,8 @@ public class AllAppsActivity extends Activity {
                 Toast.makeText(this, "无法启动：" + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-        setContentView(lv);
+        root.addView(lv, new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f));
+        setContentView(root);
     }
 }
